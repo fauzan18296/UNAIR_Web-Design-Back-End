@@ -6,7 +6,9 @@ import 'dotenv/config';
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors())
+app.use(cors({
+  origin: 'https://restoran-asafy.vercel.app/'
+}))
 app.use('/image', routes)
 app.use(logsRequest)
 

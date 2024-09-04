@@ -14,7 +14,11 @@ export const readImage = (req, res) => {
       return res.status(404).json({ message: error.message });
     }
       const fullImagePath = join(__dirname, '../../public/images/', image);
-        res.sendFile(fullImagePath);
+    res.sendFile(fullImagePath);
+    res.json({
+      status: 200,
+      data: fullImagePath
+    })
     })
   }catch(error) {
       console.error(error)

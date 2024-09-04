@@ -13,7 +13,7 @@ export const readImage = (req, res) => {
          if (error) {
       return res.status(404).json({ message: error.message });
     }
-      const fullImagePath = join(__dirname, '../../public/images', image);
+      const fullImagePath = join(__dirname, '../../public/images/', image);
         res.sendFile(fullImagePath);
     })
   }catch(error) {

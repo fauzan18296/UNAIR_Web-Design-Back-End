@@ -6,10 +6,7 @@ import 'dotenv/config';
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors({
-  origin: 'http://127.0.0.1:5173/',
-  methods: 'GET'
-}))
+app.use(cors())
 app.use('/image', routes)
 app.use(logsRequest)
 

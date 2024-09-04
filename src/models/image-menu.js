@@ -1,8 +1,8 @@
 import  dbpool from "../config/database.js";
 
 const getImageFromId = (id, callback) => {
- const dbQuery = `SELECT image FROM images WHERE id = ${id}`;
- return dbpool.execute(dbQuery, (error, results) => {
+ const dbQuery = 'SELECT image FROM images WHERE id = ?';
+ return dbpool.execute(dbQuery,[id], (error, results) => {
        if (error) {
       return callback(error, null);
     }
